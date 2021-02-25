@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+
+/*--------- variable css ---------*/
+:root{
+    --header-height: 3rem;
+    --navbar-width: 300px;
+
+    /* colors */
+    --primary-color: #CC4B2C;
+    --primary-dark: #662616;
+    --primary-darkest: #290f09;
+    --text-color: #54423d;
+    --primary-light: #EAE7E6;
+    --primary-lightest: #FFFAFA;
+
+    /* font */
+    --body: 'Noto Sans JP', sans-serif;
+    --h1-size: 1.5rem;
+    --h2-size: 1.25rem;
+    --h3-size: 1rem;
+    --normal-size: .938rem;
+    --small-size: .813rem;
+    --smallest-size: .75rem;
+    --font-medium: 500;
+    --font-semibold: 600;
+    --font-bold: 700;
+
+
+    --z-index: 100;
+
+}
+
+@media screen and (min-width: 768px){
+   :root{
+
+    --h1-size: 2.25rem;
+    --h2-size: 1.5rem;
+    --h3-size: 1.25rem;
+    --normal-s-ze: 1rem;
+    --small-size: .875rem;
+    --smallest-size: .813rem;
+   }
+}
+
+*,::before,::after{
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth ;
+}
+
+body{
+    background-color: var(--primary-lightest);
+    color: var(--text-color);
+    font-family: var(--body);
+    font-size: var(--normal-size);
+    font-weight: var(--font-medium);
+    line-height: 1.6;
+    margin: var(--header-height) 0 0 0;
+    
+}
+
+h1, h2, h3, p{
+    margin: 0;
+}
+
+h3{
+    font-weight: var(--font-semibold);
+}
+
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+img{
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+
+.section{
+    padding: 4rem 0 2rem;
+}
+
+.section-title{
+    color: var(--primary-color);
+    font-size: var(--h1-size);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.section-subtitle{
+    color: var(--primary-darkest);
+    display: block;
+    font-size: var(--small-size);
+    font-weight: var(--font-bold);
+    margin-bottom: .25rem;
+}
+
+
+/*--------- Layout ---------*/
+
+.grid{
+    max-width: 1024px;
+    display: grid;
+    grid-template-columns: 100%;
+    column-gap: 1rem;
+    width: calc(100% - 1rem);
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.header{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: var(--z-index);
+    background-color: var(--primary-lightest);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+}
+
+
+/*--------- Navigation ---------*/
+.nav{
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu{
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 90%;
+    height: 100vh;
+    padding: 3rem;
+    display: flex;
+    align-items: center;
+    background-color: var(--primary-color);
+    transition: .5s;
+}
+
+.nav_close{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+    color: var(--primary-dark);
+    cursor: pointer;
+}
+
+.nav_item{
+    margin-bottom: 2rem;
+}
+
+.nav_link{
+    font-size: 1rem;
+    color: var(--primary-lightest);
+    font-weight: var(--font-bold);
+    transition: .3s;
+    margin: 40px;
+    text-align: center;
+}
+
+.nav_link:hover{
+    color: var(--text-color);
+}
+
+.nav_toggle{
+    color: var(--primary-dark);
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+/*--------- show ---------*/
+.show{
+    left: 0;
+}
+
+/*--------- active ---------*/
+.active{
+    color: var(--text-color);
+
+}
+
+.home_containe{
+    height: calc(100vh - var(--header-height));
+    align-items: center;
+}
+
+.home_content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: max-content;
+    text-align: center;
+}
+
+.home_img{
+    padding-top: 1.3rem ;
+    padding-left: .8ren;
+    width: 160px;
+    height: 160px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+.home_img img{
+    width: 155px;
+    
+}
+
+.home_title{
+    font-size: var(--h1-size);
+    color: var(--primary-color);
+    font-weight: var(--font-semibold);
+}
+
+.profession{
+    font-size: var(--small-size);
+    color: var(--primary-dark);
+    margin-bottom: 2.5rem;
+}
+
