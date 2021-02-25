@@ -20,10 +20,10 @@ navLink.forEach(n=>n.addEventListener('click', ()=>{
 }))
 
 //section scroll
-const section = document.querySelectorAll('section[i]');
-window.addEventListener('scroll', scrollActive)
+const section = document.querySelectorAll('section[id]');
+window.addEventListener('scroll', activateScroll)
 
-activateScroll = () => {
+const activateScroll = () => {
     const scroll = window.pageYOffset;
 
     section.forEach(current => {
@@ -32,11 +32,11 @@ activateScroll = () => {
         sectionID = current.getAttribute('id');
 
         if(scroll > sectionTop && scroll <= sectionTop + sectionHeight){
-            document.querySelector(`.menu a[href*= ${sectionID}`).classList.add('active');
+            document.querySelector('.menu a[href='+ sectionID+']').classList.add('active');
         }else{
-            document.querySelector(`.menu a[href*= ${sectionID}`).classList.remove ('active');
+            document.querySelector('.menu a[href='+ sectionID+']').classList.remove ('active');
         }
     })
 
-    
+window.addEventListener('scroll', activateScroll)
 }
