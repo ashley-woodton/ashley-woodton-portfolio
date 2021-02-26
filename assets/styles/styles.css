@@ -6,12 +6,13 @@
   --navbar-width: 300px;
 
   /* colors */
-  --primary-color: #cc4b2c;
-  --primary-dark: #662616;
-  --primary-darkest: #290f09;
+  --primary-color: #ff3f3d;
+  --primary-dark: #6f1b1a;
+  --primary-darkest: #150505;
   --text-color: #54423d;
-  --primary-light: #eae7e6;
+  --primary-light: #ff3f3d;
   --primary-lightest: #fffafa;
+  --background: #fffafa;
 
   /* font */
   --body: "Noto Sans JP", sans-serif;
@@ -23,7 +24,7 @@
   --smallest-size: 0.75rem;
   --font-medium: 500;
   --font-semibold: 600;
-  --font-bold: 700;
+  --font-bold: 800;
 
   --z-index: 100;
 }
@@ -50,7 +51,7 @@ html {
 }
 
 body {
-  background-color: var(--primary-lightest);
+  background-color: var(--background);
   color: var(--text-color);
   font-family: var(--body);
   font-size: var(--normal-size);
@@ -192,7 +193,7 @@ img {
   color: var(--text-color);
 }
 /*--------- home ---------*/
-.home_containe {
+.home_container {
   height: calc(100vh - var(--header-height));
   align-items: center;
 }
@@ -379,8 +380,8 @@ img {
   width: 98%;
   padding: 1rem;
   outline: none;
-  border: none;
-  background-color: var(--primary-light);
+  border: 2px solid var(--primary-light);
+  background-color: var(--primary-lightest);
   font-size: var(--normal-size);
   margin-bottom: 1rem;
   border-radius: 0.5rem;
@@ -453,4 +454,83 @@ img {
 .footer_rights {
   font-size: var(--smallest-size);
   color: var(--text-color);
+}
+
+/* ------------ MEDIA QUERIES ------------ */
+
+/* Tablet */
+@media screen and (min-width: 768px) {
+  .home_button {
+    width: initial;
+  }
+  .menu {
+    width: var(--navbar-width);
+  }
+  .about_container,
+  .works_container,
+  .contact_container,
+  .contact_inputs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about_data {
+    text-align: initial;
+  }
+  .about_description {
+    margin-bottom: 2.5rem;
+  }
+  .about_information {
+    padding-left: 4rem;
+  }
+  .contact_inputs {
+    display: grid;
+    column-gap: 1.5rem;
+  }
+  .contact_info {
+    padding-left: 3rem;
+  }
+  .footer {
+    background: none;
+  }
+  .footer_container {
+    background-color: var(--primary-darkest);
+    padding: 3rem 0;
+    border-radius: 0.5rem;
+  }
+}
+
+/* computer */
+@media screen and (min-width: 1024px) {
+  body {
+    margin: 0;
+    padding-left: var(--navbar-width);
+  }
+
+  .header {
+    width: 0;
+  }
+  .nav_toggle,
+  .nav_logo,
+  .nav_close {
+    display: none;
+  }
+  .menu {
+    left: 0;
+  }
+  .nav_link {
+    text-align: left;
+  }
+  .home_container {
+    height: 100vh;
+  }
+  .section {
+    padding: 3rem 0 2rem;
+  }
+  .grid {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .works_container {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
